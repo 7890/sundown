@@ -61,7 +61,7 @@ main(int argc, char **argv)
 	/* performing markdown parsing */
 	ob = bufnew(OUTPUT_UNIT);
 
-	sdhtml_renderer(&callbacks, &options, 0);
+	sdhtml_renderer(&callbacks, &options, HTML_USE_XHTML);
 	markdown = sd_markdown_new(MKDEXT_FENCED_CODE, 16, &callbacks, &options);
 
 	sd_markdown_render(ob, ib->data, ib->size, markdown);
